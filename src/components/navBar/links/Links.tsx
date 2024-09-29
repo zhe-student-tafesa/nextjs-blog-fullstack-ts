@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import styles from "./links.module.css";
 import { LinkInterface } from "@/types";
 import Link from "next/link";
@@ -27,20 +28,32 @@ const Links = () => {
   // TEMPORARY
   const session = true;
   const isAdmin = true;
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className={styles.container}>
-      {links.map((link) => (
-        <NavLink title={link.title} path={link.path} key={link.title} />
-      ))}
-      {session ? (
-        <>
-          {isAdmin && (
-            <NavLink title={"Admin"} path={"/admin"} key={"/admin"} />
-          )}
-          <button className={styles.buttonLogout}>Logout</button>
-        </>
-      ) : (
-        <NavLink title={"Login"} path={"/login"} key={"/login"} />
+      <div className={styles.links}>
+        {links.map((link) => (
+          <NavLink title={link.title} path={link.path} key={link.title} />
+        ))}
+        {session ? (
+          <>
+            {isAdmin && (
+              <NavLink title={"Admin"} path={"/admin"} key={"/admin"} />
+            )}
+            <button className={styles.buttonLogout}>Logout</button>
+          </>
+        ) : (
+          <NavLink title={"Login"} path={"/login"} key={"/login"} />
+        )}
+      </div>
+
+      <button onClick={() => setIsOpen((previous) => !previous)}>Menu</button>
+      {isOpen && (
+        <div className={styles.mobileLinks}>
+          {links.map((link) => (
+            <NavLink title={link.title} path={link.path} key={link.title} />
+          ))}
+        </div>
       )}
     </div>
   );
