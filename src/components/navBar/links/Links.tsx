@@ -47,11 +47,14 @@ const Links = () => {
           <NavLink title={"Login"} path={"/login"} key={"/login"} />
         )}
       </div>
-
-      <button
-        onClick={() => setIsOpen((previous) => !previous)}
+      <Image
+        src="/menu.png"
+        alt="menu"
+        width={30}
+        height={30}
+        onClick={() => setIsOpen((prev) => !prev)}
         className={styles.menuButton}
-      ></button>
+      />
       {/* <Image src={"/menu.png"} alt={""} width={30} height={30} /> */}
       {isOpen && (
         <div className={styles.mobileLinks}>
