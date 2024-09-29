@@ -24,7 +24,7 @@ const links: LinkInterface[] = [
 ];
 const Links = () => {
   return (
-    <div>
+    <div className={styles.container}>
       {links.map((link) => (
         <Link href={link.path} key={link.title}>
           {link.title}
