@@ -4,6 +4,7 @@ import styles from "./links.module.css";
 import { LinkInterface } from "@/types";
 import Link from "next/link";
 import NavLink from "./navLink/NavLink";
+import Image from "next/image";
 
 const links: LinkInterface[] = [
   {
@@ -47,7 +48,11 @@ const Links = () => {
         )}
       </div>
 
-      <button onClick={() => setIsOpen((previous) => !previous)}>Menu</button>
+      <button
+        onClick={() => setIsOpen((previous) => !previous)}
+        className={styles.menuButton}
+      ></button>
+      {/* <Image src={"/menu.png"} alt={""} width={30} height={30} /> */}
       {isOpen && (
         <div className={styles.mobileLinks}>
           {links.map((link) => (

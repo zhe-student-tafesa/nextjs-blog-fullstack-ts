@@ -8,23 +8,39 @@
 
 /* height: calc(100vh - 100px);: must has SPACE */
 /* height: calc(100vh-100px);   NOT WORKING*/
+.menuButton,
 .mobileLinks {
-    position: absolute;
-    right: 0;
-    top: 100px;
-    width: 50%;
-    height: calc(100vh - 100px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background-color: aqua;
+    display: none;
 }
+
 
 .buttonLogout {
     padding: 10px;
     font-weight: bold;
     cursor: pointer;
+}
 
+@media(max-width:768px) {
+    .links {
+        display: none;
+    }
+
+    .menuButton {
+        display: block;
+        cursor: pointer;
+    }
+
+    .mobileLinks {
+        position: absolute;
+        right: 0;
+        top: 100px;
+        width: 50%;
+        height: calc(100vh - 100px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background-color: rebeccapurple;
+    }
 }
