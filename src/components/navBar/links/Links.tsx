@@ -24,11 +24,24 @@ const links: LinkInterface[] = [
   },
 ];
 const Links = () => {
+  // TEMPORARY
+  const session = true;
+  const isAdmin = true;
   return (
     <div className={styles.container}>
       {links.map((link) => (
         <NavLink title={link.title} path={link.path} key={link.title} />
       ))}
+      {session ? (
+        <>
+          {isAdmin && (
+            <NavLink title={"Admin"} path={"/admin"} key={"/admin"} />
+          )}
+          <button className={styles.buttonLogout}>Logout</button>
+        </>
+      ) : (
+        <NavLink title={"Login"} path={"/login"} key={"/login"} />
+      )}
     </div>
   );
 };
