@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./links.module.css";
 import { LinkInterface } from "@/types";
 import Link from "next/link";
+import NavLink from "./navLink/NavLink";
 
 const links: LinkInterface[] = [
   {
@@ -26,9 +27,7 @@ const Links = () => {
   return (
     <div className={styles.container}>
       {links.map((link) => (
-        <Link href={link.path} key={link.title}>
-          {link.title}
-        </Link>
+        <NavLink title={link.title} path={link.path} key={link.title} />
       ))}
     </div>
   );
