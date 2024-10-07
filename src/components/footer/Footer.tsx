@@ -2,7 +2,14 @@ import React from "react";
 import styles from "./footer.module.css";
 
 const Footer = () => {
-  return <div>footer</div>;
+  return (
+    <div className={styles.container}>
+      <div className={styles.logo}>frankdev</div>
+      <div className={styles.text}>
+        Frank creative thoughts agency © All rights reserved.
+      </div>
+    </div>
+  );
 };
 
 export default Footer;
