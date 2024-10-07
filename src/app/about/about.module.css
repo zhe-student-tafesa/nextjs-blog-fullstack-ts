@@ -33,6 +33,7 @@
 .columnContainer {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
 .numbers {
@@ -78,7 +79,7 @@
         flex: 1;
         /* !!! MUST has width and min-height */
         width: 100%;
-        min-height: 300px;
+        min-height: 400px;
 
     }
 }
