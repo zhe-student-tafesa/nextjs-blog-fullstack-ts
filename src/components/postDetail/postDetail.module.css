@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.imglContainer {
+    position: relative;
+
+}
+
+.img {
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.authorContainer,
+.dateContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.topTitle {
+    color: gray;
+    font-weight: bold;
+}
+
+.bottomValue {
+    font-weight: 500;
+}
+
+@media(max-width: 640px) {}
