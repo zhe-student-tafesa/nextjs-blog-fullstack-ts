@@ -1,3 +1,33 @@
-.container{
-    
+.container {
+    display: flex;
+    gap: 50px;
+}
+
+.imgContainer {
+    flex: 1;
+    height: calc(100vh - 200px);
+    position: relative;
+}
+
+.img {
+    object-fit: cover;
+}
+
+.title {
+    font-size: 64px;
+}
+
+.textContainer {
+    flex: 2;
+}
+
+.desc {
+    font-size: 20px;
+}
+
+/* small screen, hide image */
+@media(max-width:768px) {
+    .imgContainer {
+        display: none;
+    }
 }
