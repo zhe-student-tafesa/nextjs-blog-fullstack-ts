@@ -7,6 +7,7 @@ const PostDetail = async ({ userId }: { userId: number }) => {
   //   console.log("userId: ", userId);
   const user = await getUser(userId);
   //   console.log("user: ", user);
+  console.log(typeof user);
   return (
     <div className={styles.container}>
       <div className={styles.imglContainer}>
