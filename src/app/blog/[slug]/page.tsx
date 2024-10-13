@@ -2,7 +2,17 @@ import Image from "next/image";
 import styles from "./singleBlog.module.css";
 import PostDetail from "@/components/postDetail/PostDetail";
 
-export default function SingleBlogPage() {
+// Parsing route parameters
+interface SingleBlogPageProps {
+  params: {
+    slug: string;
+  };
+}
+
+// Parsing route parameters
+export default async function SingleBlogPage({ params }: SingleBlogPageProps) {
+  const { slug } = params;
+  console.log("slug: ", slug);
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
