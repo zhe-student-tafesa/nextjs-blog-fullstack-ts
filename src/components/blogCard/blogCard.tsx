@@ -3,15 +3,18 @@ import styles from "./blogCard.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { MockPostInterface } from "@/types";
+import { IPost } from "@/lib/models";
 {
   /* Step 2: { post }---Parsing out parameters */
 }
 {
   /* Step 3: { post: MockPostInterface }---Specifying parameter types */
 }
-const BlogCard = ({ post }: { post: MockPostInterface }) => {
+
+// const BlogCard = ({ post }: { post: MockPostInterface }) => {
+const BlogCard = ({ post }: { post: IPost }) => {
   // console.log("post: ", post);
-  const { id, title, desc, userId, slug, img } = post;
+  const { title, desc, userId, slug, img } = post;
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -32,7 +35,7 @@ const BlogCard = ({ post }: { post: MockPostInterface }) => {
       <div className={styles.bottom}>
         <h1 className={styles.title}>{title}</h1>
         <p className={styles.desc}>{desc}</p>
-        <Link href={`/blog/${id}`} className={styles.link}>
+        <Link href={`/blog/${slug}`} className={styles.link}>
           READ MORE
         </Link>
       </div>
