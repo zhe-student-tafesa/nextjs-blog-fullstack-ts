@@ -2,10 +2,12 @@ import React from "react";
 import styles from "./postDetail.module.css";
 import Image from "next/image";
 import { getUser } from "@/lib/mockData";
+import { getDBUser } from "@/lib/realData";
 
-const PostDetail = async ({ userId }: { userId: number }) => {
+const PostDetail = async ({ userId }: { userId: string }) => {
   //   console.log("userId: ", userId);
-  const user = await getUser(userId);
+  //   const user = await getUser(userId);
+  const user = await getDBUser(userId);
   //   console.log("user: ", user);
   console.log(typeof user);
   return (
