@@ -8,24 +8,7 @@ export interface LinkInterface {
     path: string,
 }
 
-export interface UserInterface {
-    _id: ObjectId,
-    username: string,
-    password: string,
-    email: string,
-    isAdmin: boolean,
-    createdAt: Date
-}
 
-export interface PostInterface {
-    _id: ObjectId,
-    title: string,
-    desc: string,
-    userId: string,
-    slug: string,
-    img: string | null
-    createdAt: Date
-}
 
 export interface MockUserInterface {
     id: number,
