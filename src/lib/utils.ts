@@ -17,3 +17,5 @@ const connectToDb = async () => {
         throw new Error(error instanceof Error ? error.message : String(error))
     }
 }
+
+export default connectToDb

@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 
 // 1. Define the User and Post interfaces ！！！
-interface IUser extends Document {
+export interface IUser extends Document {
     username: string;
     password: string;
     email: string;
@@ -10,7 +10,7 @@ interface IUser extends Document {
     isAdmin?: boolean;
 }
 
-interface IPost extends Document {
+export interface IPost extends Document {
     title: string;
     desc: string;
     img?: string;
