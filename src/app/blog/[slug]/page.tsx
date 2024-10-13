@@ -3,6 +3,7 @@ import styles from "./singleBlog.module.css";
 import PostDetail from "@/components/postDetail/PostDetail";
 import { getPost } from "@/lib/mockData";
 import { Suspense } from "react";
+import { getDBPost } from "@/lib/realData";
 
 // Parsing route parameters
 interface SingleBlogPageProps {
@@ -15,7 +16,8 @@ interface SingleBlogPageProps {
 export default async function SingleBlogPage({ params }: SingleBlogPageProps) {
   const { slug } = params;
   // console.log("slug: ", slug);
-  const post = await getPost(parseInt(slug));
+  // const post = await getPost(parseInt(slug));
+  const post = await getDBPost(slug);
   // console.log("post: ", post);
   return (
     <div className={styles.container}>
@@ -36,7 +38,7 @@ export default async function SingleBlogPage({ params }: SingleBlogPageProps) {
 
         {post && (
           <Suspense fallback={<div>Loading...</div>}>
-            <PostDetail userId={post?.userId || 0} />
+            <PostDetail userId={post?.userId} />
           </Suspense>
         )}
 
