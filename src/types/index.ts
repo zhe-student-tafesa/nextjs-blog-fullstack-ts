@@ -33,6 +33,7 @@ export interface MockUserInterface {
     password: string,
     email: string,
     isAdmin: boolean,
+    img: string | null
 }
 
 export interface MockPostInterface {

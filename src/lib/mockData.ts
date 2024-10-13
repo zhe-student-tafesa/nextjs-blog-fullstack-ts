@@ -1,9 +1,18 @@
 import { MockPostInterface, MockUserInterface } from "@/types";
 
 const users: MockUserInterface[] = [
-    { id: 1, username: 'John1', password: '1', email: "1.q@qq.com", isAdmin: false },
-    { id: 2, username: 'John2', password: '2', email: "2.q@qq.com", isAdmin: true },
-    { id: 3, username: 'John3', password: '3', email: "3.q@qq.com", isAdmin: false },
+    {
+        id: 1, username: 'John1', password: '1', email: "1.q@qq.com", isAdmin: false,
+        img: null
+    },
+    {
+        id: 2, username: 'John2', password: '2', email: "2.q@qq.com", isAdmin: true,
+        img: 'https://images.pexels.com/photos/16465970/pexels-photo-16465970/free-photo-of-a-woman-posing-in-a-vast-yellow-flower-field.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    },
+    {
+        id: 3, username: 'John3', password: '3', email: "3.q@qq.com", isAdmin: false,
+        img: null
+    },
 ];
 
 const posts: MockPostInterface[] = [
